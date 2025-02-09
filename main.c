@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-char* generate_filename(const char* name, int postfix) 
+char* generate_filename(const char* name, int postfix)
 {
     static char filename[MAX_FILENAME_LENGTH];
     snprintf(filename, sizeof(filename), "%s%d.txt", name, postfix);
@@ -62,7 +62,7 @@ void process_mesh(C_STRUCT aiMesh *mesh)
 		// process vertex positions, normals
 		float x = mesh->mVertices[i].x;
 		float y = mesh->mVertices[i].y;
-		float z = mesh->mVertices[i].z; 
+		float z = mesh->mVertices[i].z;
 
 		fprintf(meshFile, "%.1f, %.1f, %.1f,\n", x, y, z);
 	}
@@ -72,7 +72,7 @@ void process_mesh(C_STRUCT aiMesh *mesh)
 	for(unsigned int i = 0; i < mesh->mNumVertices; i++) {
 		float x = mesh->mNormals[i].x;
 		float y = mesh->mNormals[i].y;
-		float z = mesh->mNormals[i].z; 
+		float z = mesh->mNormals[i].z;
 		fprintf(meshFile, "%.1f, %.1f, %.1f,\n", x, y, z);
 	}
 
@@ -81,10 +81,10 @@ void process_mesh(C_STRUCT aiMesh *mesh)
 	for(unsigned int i = 0; i < mesh->mNumVertices; i++) {
 		float xp = mesh->mNormals[i].x;
 		float yp = mesh->mNormals[i].y;
-		float zp = mesh->mNormals[i].z; 
+		float zp = mesh->mNormals[i].z;
 		float xn = mesh->mNormals[i].x;
 		float yn = mesh->mNormals[i].y;
-		float zn = mesh->mNormals[i].z; 
+		float zn = mesh->mNormals[i].z;
 		fprintf(meshFile, "%.1f, %.1f, %.1f, %.1f, %.1f, %.1f,\n",
 				xp, yp, zp, xn, yn, zn);
 	}
@@ -105,7 +105,7 @@ void process_mesh(C_STRUCT aiMesh *mesh)
 			}
 		}
 	}
-	
+
 	fclose(meshFile);
 }
 
